@@ -99,7 +99,7 @@ function convertAssetToDataURI(asset) {
 
 // Function to process and clean up MHTML content specifically for IE-generated documents
 function removeMimeFormatHeaderFromIE(mhtml) {
-    return mhtml.replace("\r\nThis is a multi-part message in MIME format.", "");
+    return mhtml.replace(/(\r\n|\n)This is a multi-part message in MIME format./g, "");
 }
 
 // Main module.
